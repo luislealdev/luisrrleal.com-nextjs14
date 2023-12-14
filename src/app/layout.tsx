@@ -26,10 +26,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>
+      <head>
+        <link rel="stylesheet" href="https://luisrrleal.com/styles/leal-styles.css" />
+      </head>
+      <body className='p-40'>
         <Navbar />
         {children}
       </body>
     </html>
   )
 }
+

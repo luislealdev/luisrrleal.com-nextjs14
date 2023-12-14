@@ -1,0 +1,20 @@
+.primaryColor {
+    color: #2EAD5D;
+}
+
+.bgPrimary {
+    background-color: #2EAD5D;
+}
+
+.bgSecondary {
+    background-color: #FAFAFA;
+}
+
+.ul li {
+    list-style-type: circle;
+    font-size: 18px;
+}
+
+.ul li::before {
+    color: #2EAD5D;
+}
