@@ -27,6 +27,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/react-quill@1.3.3/dist/quill.snow.css"
+        />
         <link rel="stylesheet" href="https://luisrrleal.com/styles/leal-styles.css" />
       </head>
       <body className='p-40'>

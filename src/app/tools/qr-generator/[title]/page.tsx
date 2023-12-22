@@ -1,4 +1,4 @@
-import { qr_generator_titles } from "../../../../../data/tools";
+import { qr_generator_titles } from "../../../../data/tools";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
@@ -18,6 +18,10 @@ export async function generateStaticParams() {
     title
   }));
 }
+
+
+
+
 
 const QrGenerator: NextPage<Props> = ({ newTitle }) => {
   const [url, setUrl] = useState("https://luisrrleal.com/");

@@ -1,4 +1,3 @@
-import { smallArticle } from '@/interfaces';
 import fs from 'fs';
 import matter from 'gray-matter';
 import Image from 'next/image';

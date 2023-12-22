@@ -1,4 +1,4 @@
-import { recentArticle } from '../../src/interfaces/articlesInterfaces';
+import { recentArticle } from '../../interfaces/articlesInterfaces';
 export const recentArticles: recentArticle[] = [
     {
         title: "La mejor alternativa a Material UI",

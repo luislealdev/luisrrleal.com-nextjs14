@@ -4,18 +4,22 @@
   font-family: "Mulish", sans-serif;
 }
 
-.f-size-40{
+.f-size-40 {
   font-size: 40px;
 }
 
-pre{
+pre {
   font-family: "Mulish", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
   background-color: #f8f9fa;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   padding: 1rem;
   overflow: auto;
+}
+
+#preview-article img {
+  max-width: 100%;
 }
