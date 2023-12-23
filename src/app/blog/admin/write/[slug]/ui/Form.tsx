@@ -61,7 +61,7 @@ export const Form: FC<Props> = ({ title, categories, article }) => {
         formData.append("description", description ?? '');
         formData.append("metatags", metatags ?? '');
         formData.append("categoryId", 'da36adb0-a726-4973-82a4-f43bcb48aaf4');
-        formData.append("content", content);
+        formData.append("content", content ?? '');
         formData.append("slug", (newTitle ?? '').toLocaleLowerCase().replace(' ', '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
         formData.append("date", new Date().toLocaleDateString('en-GB'));
         formData.append("userId", "83db012f-cbd3-4d43-8072-bb7edba51ac0");
@@ -118,7 +118,7 @@ export const Form: FC<Props> = ({ title, categories, article }) => {
                 </div>
                 <div id='preview-article'>
                     <h2>Preview</h2>
-                    <div dangerouslySetInnerHTML={{ __html: content }} className='f-size-18 mt-10 view ql-editor' />
+                    <div dangerouslySetInnerHTML={{ __html: content ?? '' }} className='f-size-18 mt-10 view ql-editor' />
                 </div>
             </section>
         </>
