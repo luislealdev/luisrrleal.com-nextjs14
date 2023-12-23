@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Navbar } from '@/components/ui'
+import { Footer, Navbar } from '@/components/ui'
 
 export const metadata: Metadata = {
   icons: { icon: '/favicon.ico' },
@@ -33,10 +33,14 @@ export default function RootLayout({
         />
         <link rel="stylesheet" href="https://luisrrleal.com/styles/leal-styles.css" />
       </head>
-      <body className='p-40'>
-        <Navbar />
-        {children}
+      <body >
+        <div className='p-40'>
+          <Navbar />
+          {children}
+        </div>
+        <Footer />
       </body>
+
     </html>
   )
 }
