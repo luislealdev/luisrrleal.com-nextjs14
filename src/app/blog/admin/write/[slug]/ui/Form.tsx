@@ -30,11 +30,11 @@ export const Form: FC<Props> = ({ title, categories, article }) => {
 
     const router = useRouter();
 
-    const { formState, onInputChange, onResetForm } = useForm(formData);
+    const { formState, onInputChange, onResetForm } = useForm(article);
 
-    const { newTitle = '', metatags = '', description = '', category }: formData = formState;
+    const { newTitle = article.title, metatags = '', description = '', category }: formData = formState;
 
-    const [content, setcontent] = useState("");
+    const [content, setcontent] = useState(article.content);
 
     const toolbarOptions = {
         toolbar: [
@@ -55,14 +55,14 @@ export const Form: FC<Props> = ({ title, categories, article }) => {
         e.preventDefault();
         const formData = new FormData();
 
-        if (article.id) formData.append("id", article.id ?? '');
+        if (article.id) formData.append("id", article.id);
 
-        formData.append("title", newTitle);
-        formData.append("description", description);
-        formData.append("metatags", metatags);
+        formData.append("title", newTitle ?? '');
+        formData.append("description", description ?? '');
+        formData.append("metatags", metatags ?? '');
         formData.append("categoryId", 'da36adb0-a726-4973-82a4-f43bcb48aaf4');
         formData.append("content", content);
-        formData.append("slug", newTitle.toLocaleLowerCase().replace(' ', '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+        formData.append("slug", (newTitle ?? '').toLocaleLowerCase().replace(' ', '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
         formData.append("date", new Date().toLocaleDateString('en-GB'));
         formData.append("userId", "83db012f-cbd3-4d43-8072-bb7edba51ac0");
 
