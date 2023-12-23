@@ -3,7 +3,7 @@ import React from 'react'
 
 const AdminDashboard = () => {
     return (
-        <section className='flex space-between'>
+        <section className='flex'>
             <div>
                 <h1>¡Hola Luis!</h1>
                 <p>¿Qué quieres hacer hoy?</p>

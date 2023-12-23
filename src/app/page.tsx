@@ -18,16 +18,10 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <h2>Sobre mí</h2>
-      </section>
-      <section>
         <h2>Soluciones</h2>
-      </section>
+      </section>  
       <section>
-        <h2>Blog</h2>
-      </section>
-      <section>
-        <h2>Herramientas</h2>
+        <h2>Sobre mí</h2>
       </section>
     </main>
   )
