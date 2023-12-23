@@ -20,10 +20,24 @@ model User {
 }
 
 model Article {
-  id       Int      @id @default(autoincrement())
-  metatags String[]
-  User     User?    @relation(fields: [userId], references: [id])
-  userId   String?
-  //TODO: CHANCHE BYTES TO ANOTHER
-  content  Bytes
+  id String @id @default(uuid())
+
+  title       String
+  metatags    String[]
+  content     String
+  slug        String
+  date        String
+  description String
+
+  //Relations
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+  User       User     @relation(fields: [userId], references: [id])
+  userId     String
+}
+
+model Category {
+  id       String    @id @default(uuid())
+  category String    @unique
+  Article  Article[]
 }
