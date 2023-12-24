@@ -35,3 +35,26 @@ img {
 .white-border {
   border: 1px solid white;
 }
+
+.gray-color {
+  color: #6b7280;
+}
+
+.bg-gray {
+  background-color: #f3f4f6;
+}
+
+.hover-underline-blue:hover {
+  text-decoration: 2px underline #049fff;
+  transition: text-decoration 300ms;
+}
+
+@media (max-width: 770px) {
+  .p-40 {
+    padding: 20px !important;
+  }
+
+  .f-size-70 {
+    font-size: 30px !important;
+  }
+}
