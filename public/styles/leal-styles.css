@@ -339,6 +339,10 @@ button {
   border-radius: 100%;
 }
 
+.no-border {
+  border: 0px !important;
+}
+
 .white-border {
   border: solid white 1px;
 }
@@ -531,7 +535,7 @@ button {
   font-size: 30px;
 }
 
-.f-size-40{
+.f-size-40 {
   font-size: 40px;
 }
 

@@ -5,7 +5,7 @@ const ContactPage = () => {
     return (
         <section className="grid-c-2 gap-25">
             <div>
-
+                {/* TODO: FINISH PAGE */}
             </div>
             <div>
                 <h1 className="f-size-50">Contacto</h1>

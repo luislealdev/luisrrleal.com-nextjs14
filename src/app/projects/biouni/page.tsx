@@ -3,7 +3,8 @@ import styles from './styles/index.module.css';
 import Image from "next/image";
 import Head from "next/head";
 
-const index = () => {
+export default function Page() {
+    //TODO: ADD METATAGS
     return (
         <>
             <Head>
@@ -191,5 +192,3 @@ const index = () => {
         </>
     )
 }
-
-export default index
