@@ -49,6 +49,12 @@ img {
   transition: text-decoration 300ms;
 }
 
+/* BLOG */
+#blog-content {
+  padding: 40px;
+  max-width: 800px;
+}
+
 @media (max-width: 770px) {
   .p-40 {
     padding: 20px !important;
@@ -60,5 +66,10 @@ img {
 
   .grid-c-3 {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  #blog-content {
+    padding: 20px;
+    max-width: -webkit-fill-available;
   }
 }

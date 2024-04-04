@@ -8,4 +8,5 @@ export interface Article {
     description: string,
     category: string,
     user: string,
+    coverImage: string
 }

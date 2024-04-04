@@ -1,87 +1,9 @@
-// import fs from 'fs';
-// import matter from 'gray-matter';
-// import Image from 'next/image';
-// import markdownit from 'markdown-it'
+
 
 import { getAllArticles, getArticleBySlug } from "@/actions";
 import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
-
-// interface Props {
-//     params: { slug: string };
-// }
-
-// interface ArticleProps {
-//     frontmatter: smallArticle,
-//     content: string
-// }
-
-
-// export async function generateStaticParams() {
-//     const files = fs.readdirSync('./data/articles');
-
-//     const slugs = files.map(fileName =>
-//         fileName.replace('.md', '')
-//     );
-
-//     return slugs;
-// }
-
-// import type { Metadata } from 'next'
-// import { smallArticle } from '@/interfaces';
-
-// export async function generateMetadata({ params }: Props): Promise<Metadata> {
-//     const slug = params?.slug;
-//     const file = fs.readFileSync(`./data/articles/${slug}.md`, 'utf-8');
-//     const { data } = matter(file);
-
-//     return {
-//         title: data.title,
-//         description: data.description,
-//         keywords: data.keywords,
-//         openGraph: {
-//             title: data.title,
-//             description: data.description,
-//             images: [
-//                 {
-//                     url: data.socialImage,
-//                     alt: data.title,
-//                 },
-//             ],
-//         },
-//     };
-// }
-
-// const getArticle = async (slug: string): Promise<ArticleProps> => {
-//     const file = fs.readFileSync(`./data/articles/${slug}.md`, 'utf-8');
-
-//     const { data: frontmatter, content } = matter(file);
-
-//     return {
-//         frontmatter,
-//         content
-//     };
-// };
-
-// export default async function ArticlePage({ params }: Props) {
-//     const { frontmatter, content } = await getArticle(params.slug);
-
-//     return (
-//         <div style={{ maxWidth: 800 }}>
-//             <h1 className='f-size-40'>{frontmatter.title}</h1>
-//             <p className='mb-10'>{frontmatter.date}</p>
-//             <Image
-//                 src={frontmatter.socialImage}
-//                 alt={frontmatter.title}
-//                 className="max-width"
-//                 width={1000}
-//                 height={400}
-//             />
-//             <div dangerouslySetInnerHTML={{ __html: markdownit().render(content) }} className='f-size-18 mt-10' />
-//         </div>
-//     );
-// }
-
+import Link from "next/link";
 
 interface Props {
     params: {
@@ -109,12 +31,11 @@ export async function generateMetadata(
     // fetch data
     const article = await getArticleBySlug(slug);
 
-    // optionally access and extend (rather than replace) parent metadata
-    // const previousImages = (await parent).openGraph?.images || []
 
     return {
         title: article?.title ?? "Artículo no encontrado",
-        description: "",
+        description: article?.description ?? "",
+        keywords: article?.metatags ?? "",
     };
 }
 
@@ -123,10 +44,29 @@ export default async function ArticlePage({ params }: Props) {
     const article = await getArticleBySlug(slug);
 
     return (
-        <div style={{ maxWidth: 800 }}>
-            <Image src={article!.coverImage} alt={article!.title} className="max-width" width={1000} height={100} />
-            <h1 className='f-size-40'>{article?.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: article?.content ?? '' }} className='f-size-18 mt-10' />
+        <div className="flex column">
+            <header className="flex space-between p-20">
+                <div className="flex justify-content align-center gap-15">
+                    <Image src='https://media.licdn.com/dms/image/D5603AQGhCMVUYKFiqg/profile-displayphoto-shrink_400_400/0/1686592085975?e=1717632000&v=beta&t=U9SrlCCjq1LstR3zdttOk9viuzA4yjlwzA1GZZlIBow' width={50} height={50} className="radius-100" alt="Luis Leal" />
+                    <div>
+                        <h5 className="f-size-24">Luis Leal</h5>
+                        <h6 className="gray-color f-size-18">FullStack Developer</h6>
+                    </div>
+                </div>
+                <div className="flex justify-content align-center gap-5 f-size-30">
+                    <Link href="https://github.com/luislealdev" target="_blank" className="black-text">
+                        <i className="fa-brands fa-square-github"></i>
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/luisrrleal/" className="black-text" target="_blank">
+                        <i className="fa-brands fa-linkedin color-black"></i>
+                    </Link>
+                </div>
+            </header>
+            <div id="blog-content">
+                <h1 className='f-size-40 center-text'>{article?.title}</h1>
+                <Image src={article!.coverImage} alt={article!.title} className="max-width mt-20" width={1000} height={100} />
+                <div dangerouslySetInnerHTML={{ __html: article?.content ?? '' }} className='f-size-18 mt-10' />
+            </div>
         </div>
     )
 }

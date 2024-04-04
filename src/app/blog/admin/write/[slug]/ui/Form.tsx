@@ -2,7 +2,7 @@
 import { createUpdateArticle } from '@/actions';
 import { Article } from '@/interfaces';
 import { Category } from '@prisma/client';
-import { useSession } from 'next-auth/react';
+import { getSession, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import React, { FC, useState } from 'react'
 import ReactQuill from 'react-quill';
@@ -37,11 +37,11 @@ export const Form: FC<Props> = ({ title, categories, article }) => {
 
     const { formState, onInputChange, onResetForm } = useForm(article);
 
-    const { newTitle = title, metatags = '', description = '', categoryId = categories[0].id }: formData = formState;
+    const { newTitle = article.title, metatags = article.metatags?.toString(), description = article.description, categoryId = categories[0].id }: formData = formState;
 
     const [content, setcontent] = useState(article.content);
 
-    const [coverImage, setCoverImage] = useState<File | null>(null); // Estado para almacenar la imagen de portada seleccionada
+    const [coverImage, setCoverImage] = useState<File >(); // Estado para almacenar la imagen de portada seleccionada
 
     const handleCoverImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length > 0) {
@@ -85,7 +85,7 @@ export const Form: FC<Props> = ({ title, categories, article }) => {
         formData.append("content", content ?? '');
         formData.append("slug", (newTitle ?? '').toLocaleLowerCase().replace(' ', '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
         formData.append("date", new Date().toLocaleDateString('en-GB'));
-        formData.append("userId", data?.user?.id ?? '');
+        formData.append("userId", data!.user!.id ?? '');
 
         const { ok, article: updatedArticle } = await createUpdateArticle(formData);
 

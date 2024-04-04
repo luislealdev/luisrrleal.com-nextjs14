@@ -15,7 +15,6 @@ const articleSchema = z.object({
     slug: z.string().min(3).max(255),
     date: z.string(),
     description: z.string().min(3).max(255),
-    // Accept image as a file
     coverImage: z.instanceof(File),
     categoryId: z.string().uuid(),
     userId: z.string().uuid(),
@@ -24,7 +23,7 @@ const articleSchema = z.object({
 
 export const createUpdateArticle = async (formData: FormData) => {
     const data = Object.fromEntries(formData);
-    const parsedArticle = articleSchema.safeParse(data);
+    const parsedArticle = articleSchema.safeParse(data);    
 
     if (!parsedArticle.success) {
         console.log(parsedArticle.error);
