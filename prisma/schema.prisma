@@ -28,6 +28,7 @@ model Article {
   slug        String
   date        String
   description String
+  coverImage  String
 
   //Relations
   category   Category @relation(fields: [categoryId], references: [id])

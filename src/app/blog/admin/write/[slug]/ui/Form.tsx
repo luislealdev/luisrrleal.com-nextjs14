@@ -1,40 +1,54 @@
 'use client'
 import { createUpdateArticle } from '@/actions';
 import { Article } from '@/interfaces';
+import { Category } from '@prisma/client';
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import React, { FC, useState } from 'react'
 import ReactQuill from 'react-quill';
+import Swal from 'sweetalert2';
 import { useForm } from 'useform-simple-hook';
 
 const formData = {
     newTitle: "",
     metatags: "",
     description: "",
-    category: ""
+    categoryId: ""
 };
 
 interface formData {
     newTitle?: string;
     metatags?: string;
     description?: string;
-    category?: string;
+    categoryId?: string;
 }
 
 interface Props {
     title: string,
-    categories: string[],
+    categories: Category[],
     article: Partial<Article>
 }
 
 export const Form: FC<Props> = ({ title, categories, article }) => {
 
+    const { data } = useSession();
+
     const router = useRouter();
 
     const { formState, onInputChange, onResetForm } = useForm(article);
 
-    const { newTitle = article.title, metatags = '', description = '', category }: formData = formState;
+    const { newTitle = title, metatags = '', description = '', categoryId = categories[0].id }: formData = formState;
 
     const [content, setcontent] = useState(article.content);
+
+    const [coverImage, setCoverImage] = useState<File | null>(null); // Estado para almacenar la imagen de portada seleccionada
+
+    const handleCoverImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files.length > 0) {
+            const file = e.target.files[0];
+            setCoverImage(file);
+        }
+    };
 
     const toolbarOptions = {
         toolbar: [
@@ -53,18 +67,25 @@ export const Form: FC<Props> = ({ title, categories, article }) => {
 
     const onSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
         const formData = new FormData();
 
+        if (!coverImage) {
+            return;
+        }
+
         if (article.id) formData.append("id", article.id);
+        formData.append("coverImage", coverImage);
 
         formData.append("title", newTitle ?? '');
         formData.append("description", description ?? '');
         formData.append("metatags", metatags ?? '');
-        formData.append("categoryId", 'da36adb0-a726-4973-82a4-f43bcb48aaf4');
+        // CHANGE THIS TO ANY SELECTED CATEGORY
+        formData.append("categoryId", categoryId ?? '');
         formData.append("content", content ?? '');
         formData.append("slug", (newTitle ?? '').toLocaleLowerCase().replace(' ', '-').normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
         formData.append("date", new Date().toLocaleDateString('en-GB'));
-        formData.append("userId", "83db012f-cbd3-4d43-8072-bb7edba51ac0");
+        formData.append("userId", data?.user?.id ?? '');
 
         const { ok, article: updatedArticle } = await createUpdateArticle(formData);
 
@@ -74,6 +95,12 @@ export const Form: FC<Props> = ({ title, categories, article }) => {
         }
 
         router.replace(`/blog/admin/write/${updatedArticle?.slug}`);
+
+        Swal.fire({
+            title: "Good job!",
+            text: "Article has been published!",
+            icon: "success"
+        });
     }
 
     return (
@@ -82,6 +109,7 @@ export const Form: FC<Props> = ({ title, categories, article }) => {
                 <div className='flex column gap-5 p-40'>
                     <h1>Nuevo Artículo</h1>
                     <form onSubmit={onSubmit} className='flex column'>
+                        <input type="file" accept="image/*" onChange={handleCoverImageChange} />
                         <input type="text"
                             value={newTitle}
                             onChange={onInputChange}
@@ -102,14 +130,16 @@ export const Form: FC<Props> = ({ title, categories, article }) => {
                             placeholder='Metatags - Ingresa,palabras,claves,separadas,por,comas'
                             className='input' />
                         <select
-                            className='input' value={category}
+                            className='input'
+                            value={categoryId}
                             onChange={onInputChange}
-                            name='category'>
-                            <option value="">Tecnología</option>
-                            <option value="">Política</option>
-                            <option value="">Cultura</option>
+                            name='categoryId'>
+                            {
+                                categories.map((category, index) => (
+                                    <option defaultChecked={index == 0} key={category.id} value={category.id}>{category.category}</option>
+                                ))
+                            }
                         </select>
-
                         <ReactQuill theme="snow" modules={toolbarOptions} value={content} onChange={setcontent} className='mt-10' />
                         <div className='flex justify-content' style={{ marginTop: 100 }}>
                             <button type='submit' className='ph-20 p-10 bg-blue white-text radius' style={{ border: 0 }}>Publicar ahora</button>

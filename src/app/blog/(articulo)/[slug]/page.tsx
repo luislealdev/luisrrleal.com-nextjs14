@@ -5,6 +5,7 @@
 
 import { getAllArticles, getArticleBySlug } from "@/actions";
 import { Metadata, ResolvingMetadata } from "next";
+import Image from "next/image";
 
 // interface Props {
 //     params: { slug: string };
@@ -123,6 +124,7 @@ export default async function ArticlePage({ params }: Props) {
 
     return (
         <div style={{ maxWidth: 800 }}>
+            <Image src={article!.coverImage} alt={article!.title} className="max-width" width={1000} height={100} />
             <h1 className='f-size-40'>{article?.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: article?.content ?? '' }} className='f-size-18 mt-10' />
         </div>

@@ -2,7 +2,6 @@
 
 import prisma from "@/lib/prisma";
 
-
 export const getArticleBySlug = async (slug: string) => {
 
     try {

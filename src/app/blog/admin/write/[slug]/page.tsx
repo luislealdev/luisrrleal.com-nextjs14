@@ -1,6 +1,6 @@
 import 'react-quill/dist/quill.snow.css';
 import "react-quill/dist/quill.core.css";
-import { getArticleBySlug } from '@/actions';
+import { getArticleBySlug, getCategories } from '@/actions';
 import { redirect } from 'next/navigation';
 import { Form } from './ui/Form';
 
@@ -14,6 +14,7 @@ interface Props {
 const WritePage = async ({ params }: Props) => {
 
     const { slug } = params;
+    const categories = await getCategories();
 
     const [article] = await Promise.all([
         getArticleBySlug(slug),
@@ -32,7 +33,7 @@ const WritePage = async ({ params }: Props) => {
 
     return (
         <main>
-            <Form article={formattedArticle} title={title} categories={[]} />
+            <Form article={formattedArticle} title={title} categories={categories ?? []} />
         </main>
     )
 }
