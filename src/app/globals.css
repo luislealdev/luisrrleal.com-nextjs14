@@ -57,4 +57,8 @@ img {
   .f-size-70 {
     font-size: 30px !important;
   }
+
+  .grid-c-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }

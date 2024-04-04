@@ -1,31 +1,61 @@
-import React from 'react'
 
-const BlogPage = () => {
+import { getPaginatedArticles } from '@/actions';
+import { Pagination } from '@/components/ui';
+import Image from 'next/image';
+import React, { FC } from 'react'
+
+interface Props {
+    searchParams: {
+        page?: string
+    }
+}
+
+const BlogPage: FC<Props> = async ({ searchParams }) => {
+
+    const page = searchParams.page ? parseInt(searchParams.page) : 1;
+    const { articles, currentPage, totalPages } = await getPaginatedArticles({ page });
+
     return (
-        <section style={{ maxWidth: 1200, marginTop: -30 }} className='flex justify-content align-center'>
-            <div>
-                <div className='center-text'>
-                    <h1 className='f-size-50'>Blog</h1>
-                    <p className='f-size-18'>Consejos sobre tecnología, reflexiones y política... ¿Por qué los programadores tenemos que ser tímidos?</p>
-                </div>
-                <div className='flex column p-20 mt-50 end white-text' style={{
-                    backgroundImage: "url('https://images.lifestyleasia.com/wp-content/uploads/sites/5/2022/03/25181758/Louis-Vuitton-LV-Twist-HoYeon-Jung-1-1600x800.jpg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    minHeight: 300
-                }}>
-                    {/* <p style={{ position: 'relative', top: 0, right: 0 }}>Más reciente</p> */}
-                    <p>23/12/23</p>
-                    <h3 className='mt-10 f-size-24'>UX review presentations</h3>
-                    <p className='f-size-14'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, in quas magni sapiente porro laboriosam vel repudiandae architecto praesentium nobis non tenetur libero reprehenderit nesciunt, facere molestiae possimus cupiditate voluptatibus?</p>
-                    <div className='flex gap-15 mt-10'>
-                        <p className='white-border ph-20 radius'>UX</p>
-                        <p className='white-border ph-20 radius'>Review</p>
-                        <p className='white-border ph-20 radius'>Presentations</p>
-                    </div>
-                </div>
+        <>
+
+            <div className='center-text'>
+                <h1 className='f-size-50'>Blog</h1>
+                <p className='f-size-18'>Consejos sobre tecnología, reflexiones y política... ¿Por qué los programadores tenemos que ser tímidos?</p>
             </div>
-        </section>
+            <section style={{ maxWidth: 1200, marginTop: -30, width: '-webkit-fill-available' }} className='flex column gap-25' >
+                {
+                    articles.map((article, index) => index == 0 ? <div>
+                        <div className='flex column p-20 mt-50 end white-text' style={{
+                            backgroundImage: `url('${article.coverImage}')`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            minHeight: 300,
+                        }}>
+                            {/* <p style={{ position: 'relative', top: 0, right: 0 }}>Más reciente</p> */}
+                            <p>{article.date}</p>
+                            <h2 className='mt-10 f-size-24'>{article.title}</h2>
+                            <p className='f-size-14'>{article.description}</p>
+                            <div className='flex gap-15 mt-10'>
+                                {
+                                    article.metatags.map((tag, index) => (
+                                        <p key={index} className='white-border ph-20 radius'>{tag}</p>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div> : <div className='grid-c-3'>
+                        <div>
+                            <Image src={article.coverImage} width={500} height={500} className='max-width' alt={article.title} />
+                            <p>{article.title}</p>
+                            <p>{article.description}</p>
+                        </div>
+                    </div>)
+                }
+
+            </section>
+            <Pagination totalPages={totalPages} />
+        </>
+
     )
 }
 
