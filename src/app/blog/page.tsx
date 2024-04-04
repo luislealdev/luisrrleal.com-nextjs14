@@ -36,7 +36,7 @@ const BlogPage: FC<Props> = async ({ searchParams }) => {
                             <p>{article.date}</p>
                             <h2 className='mt-10 f-size-24'>{article.title}</h2>
                             <p className='f-size-14'>{article.description}</p>
-                            <div className='flex gap-15 mt-10' style={{overflow: 'scroll'}}>
+                            <div className='flex gap-15 mt-10' style={{ overflow: 'scroll' }}>
                                 {
                                     article.metatags.map((tag, index) => (
                                         <p key={index} className='white-border ph-20 radius'>{tag}</p>
@@ -47,8 +47,12 @@ const BlogPage: FC<Props> = async ({ searchParams }) => {
                     </Link> : <div className='grid-c-3 gap-25'>
                         <Link href={'/blog/' + article.slug}>
                             <Image src={article.coverImage} width={500} height={500} className='max-width' alt={article.title} />
-                            <p>{article.title}</p>
-                            <p>{article.description}</p>
+                            <div className='p-20 bg-gray black-text'>
+                                <p>{article.date}</p>
+                                <hr />
+                                <h3 className='mt-10'>{article.title}</h3>
+                                <p className='mt-10'>{article.description}</p>
+                            </div>
                         </Link>
                     </div>)
                 }

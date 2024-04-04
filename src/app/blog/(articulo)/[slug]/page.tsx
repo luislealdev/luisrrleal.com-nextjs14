@@ -36,6 +36,7 @@ export async function generateMetadata(
         title: article?.title ?? "Artículo no encontrado",
         description: article?.description ?? "",
         keywords: article?.metatags ?? "",
+        
     };
 }
 
