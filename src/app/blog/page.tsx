@@ -2,6 +2,7 @@
 import { getPaginatedArticles } from '@/actions';
 import { Pagination } from '@/components/ui';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { FC } from 'react'
 
 interface Props {
@@ -24,7 +25,7 @@ const BlogPage: FC<Props> = async ({ searchParams }) => {
             </div>
             <section style={{ maxWidth: 1200, marginTop: -30, width: '-webkit-fill-available' }} className='flex column gap-25' >
                 {
-                    articles.map((article, index) => index == 0 ? <div>
+                    articles.map((article, index) => index == 0 ? <Link href={'/blog/' + article.slug}>
                         <div className='flex column p-20 mt-50 end white-text' style={{
                             backgroundImage: `url('${article.coverImage}')`,
                             backgroundSize: "cover",
@@ -43,12 +44,12 @@ const BlogPage: FC<Props> = async ({ searchParams }) => {
                                 }
                             </div>
                         </div>
-                    </div> : <div className='grid-c-3'>
-                        <div>
+                    </Link> : <div className='grid-c-3'>
+                        <Link href={'/blog/' + article.slug}>
                             <Image src={article.coverImage} width={500} height={500} className='max-width' alt={article.title} />
                             <p>{article.title}</p>
                             <p>{article.description}</p>
-                        </div>
+                        </Link>
                     </div>)
                 }
 
