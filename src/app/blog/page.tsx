@@ -51,6 +51,7 @@ const BlogPage: FC<Props> = async ({ searchParams }) => {
                     </Link>
                 }
                 <div className='grid-c-3 gap-25'>
+                    {/* TODO: CREATE A COMPONENT */}
                     {
                         articles.map((article, index) => index > 0 &&
                             <Link href={'/blog/' + article.slug}>
