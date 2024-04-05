@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Luis Leal",
     url: "https://luisrrleal.com/",
-    title: "Create Next App",
+    title: "Luis Leal Developer",
     description: "FullStack Developer | Consejos para llegar a ser el desarrollador que siempre quisiste.",
     images:
       "https://nextjs-typescript-tailwindcss-eslint-prettier.vercel.app/images/og.png",
