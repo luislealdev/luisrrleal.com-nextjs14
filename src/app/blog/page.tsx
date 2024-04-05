@@ -54,7 +54,7 @@ const BlogPage: FC<Props> = async ({ searchParams }) => {
                     {/* TODO: CREATE A COMPONENT */}
                     {
                         articles.map((article, index) => index > 0 &&
-                            <Link href={'/blog/' + article.slug}>
+                            <Link href={'/blog/' + article.slug} key={article.id}>
                                 <div className='flex column bg-gray black-text gray-border'>
                                     <Image src={article.coverImage} width={500} height={500} className='max-width' alt={article.title} />
                                     <div className='p-20'>
