@@ -27,16 +27,22 @@ export async function generateMetadata(
 ): Promise<Metadata> {
     // read route params
     const slug = params.slug;
-
     // fetch data
     const article = await getArticleBySlug(slug);
-
-
     return {
         title: article?.title ?? "Artículo no encontrado",
         description: article?.description ?? "",
         keywords: article?.metatags ?? "",
-        
+        openGraph:{
+            title: article?.title ?? "Artículo no encontrado",
+            description: article?.description ?? "",
+            images: [
+                {
+                    url: article?.coverImage ?? "",
+                    alt: article?.title ?? ""
+                }
+            ]
+        }
     };
 }
 
