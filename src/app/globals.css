@@ -32,6 +32,10 @@ img {
   border: 1px solid black;
 }
 
+.gray-border {
+  border: 1px solid #6b7280;
+}
+
 .white-border {
   border: 1px solid white;
 }
@@ -71,5 +75,13 @@ img {
   #blog-content {
     padding: 20px;
     max-width: -webkit-fill-available;
+  }
+
+  .f-size-18{
+    font-size: 14px !important;
+  }
+
+  .f-size-14{
+    font-size: 12px !important;
   }
 }

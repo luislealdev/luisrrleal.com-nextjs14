@@ -1,12 +1,11 @@
 import Link from "next/link"
 import { ContactForm } from "./ui"
+import Image from "next/image"
 
 const ContactPage = () => {
     return (
         <section className="grid-c-2 gap-25">
-            <div>
-                {/* TODO: FINISH PAGE */}
-            </div>
+            <Image src='/img/ui/contact.avif' width={1000} height={1000} className='max-width' alt='Contacto' />
             <div>
                 <h1 className="f-size-50">Contacto</h1>
                 <div className="flex gap-15 align-center f-size-24">

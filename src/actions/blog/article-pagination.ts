@@ -10,9 +10,6 @@ export const getPaginatedArticles = async ({ page = 1, take = 7 }: PaginationOpt
         const articles = await prisma.article.findMany({
             take: take,
             skip: (page - 1) * take,
-            orderBy: {
-                date: 'desc'
-            },
         });
 
         const totalCount = await prisma.article.count({});

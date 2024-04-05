@@ -323,6 +323,15 @@ button {
   box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
+.black-border {
+  border: 1px solid black;
+}
+
+.gray-border {
+  border: .5px solid #6b7280;
+}
+
+
 .radius {
   border-radius: 10px;
 }
@@ -373,38 +382,30 @@ button {
 
 .bg-red-gradient {
   background: rgb(255, 0, 0);
-  background: linear-gradient(
-    66deg,
-    rgba(255, 0, 0, 0.773546918767507) 0%,
-    rgba(255, 0, 0, 1) 100%
-  );
+  background: linear-gradient(66deg,
+      rgba(255, 0, 0, 0.773546918767507) 0%,
+      rgba(255, 0, 0, 1) 100%);
 }
 
 .bg-blue-gradient {
   background: rgb(77, 240, 207);
-  background: linear-gradient(
-    66deg,
-    rgba(77, 240, 207, 1) 0%,
-    rgba(77, 240, 207, 0.36) 100%
-  );
+  background: linear-gradient(66deg,
+      rgba(77, 240, 207, 1) 0%,
+      rgba(77, 240, 207, 0.36) 100%);
 }
 
 .bg-gray-gradient {
   background: rgb(170, 170, 170);
-  background: linear-gradient(
-    66deg,
-    rgba(170, 170, 170, 1) 0%,
-    rgba(208, 208, 208, 0.63) 100%
-  );
+  background: linear-gradient(66deg,
+      rgba(170, 170, 170, 1) 0%,
+      rgba(208, 208, 208, 0.63) 100%);
 }
 
 .bg-gold-gradient {
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    66deg,
-    rgba(255, 255, 255, 0.65) 0%,
-    rgba(225, 174, 7, 1) 100%
-  );
+  background: linear-gradient(66deg,
+      rgba(255, 255, 255, 0.65) 0%,
+      rgba(225, 174, 7, 1) 100%);
 }
 
 .glass-morphism {
@@ -620,11 +621,9 @@ button {
 
 .gradient-1 {
   background: rgb(0, 158, 255);
-  background: linear-gradient(
-    66deg,
-    rgba(0, 158, 255, 1) 0%,
-    rgba(133, 183, 250, 1) 100%
-  );
+  background: linear-gradient(66deg,
+      rgba(0, 158, 255, 1) 0%,
+      rgba(133, 183, 250, 1) 100%);
 }
 
 .gradient-2 {
