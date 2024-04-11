@@ -23,7 +23,7 @@ export const QrForm = () => {
             <Image
                 width={300}
                 height={300}
-                src={`https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=${url}`}
+                src={`https://quickchart.io/qr?text=${url}&width=300&height=300&format=png`}
                 alt="qr code"
             />
             <br />
