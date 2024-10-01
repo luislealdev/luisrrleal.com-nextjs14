@@ -37,7 +37,7 @@ export default function RemoveBgPage() {
 
         setLoading(true);
         try {
-            const response = await fetch('/api/remove_bg', {
+            const response = await fetch('/api/remove-bg', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
