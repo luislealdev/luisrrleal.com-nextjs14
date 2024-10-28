@@ -142,7 +142,7 @@ export const questionSets: Record<string, Question[]> = {
       askedBy: 'Sandy',
     }
   ],
-  '18':[
+  '18': [
     {
       question: '¿Que nos hizo daño en el viaje a gto del 2022?',
       options: ['La torta de carnitas', 'La pizza', 'El agua con lechuga', 'Los helados'],
@@ -157,7 +157,37 @@ export const questionSets: Record<string, Question[]> = {
       correctAnswer: 'Cargarte de lado',
       askedBy: 'Sandy',
     }
-  ]
-
-
+  ],
+  '20': [
+    {
+      question: '¿Cuál fue el primer lugar al que te invité a salir?',
+      options: ['Al parque', 'Comer pizza', 'Comer sushi', 'Partido de futbol'],
+      correctAnswer: 'Comer sushi',
+      askedBy: 'Luisito (tu bb)',
+    }
+  ],
+  '21': [
+    {
+      question: '¿Con quién estábamos cuando nos dimos uno de nuestros besos más tiernos?',
+      options: ['Nao', 'Solos', 'Pablo', 'Simba'],
+      correctAnswer: 'Nao',
+      askedBy: 'Luisito (tu bb)',
+    }
+  ],
+  '22': [
+    {
+      question: '¿Cuándo te di por primera vez flores?',
+      options: ['Tu cumpleaños', 'Después de un examen', 'Día de las flores amarillas', 'Guanajuato'],
+      correctAnswer: 'Día de las flores amarillas',
+      askedBy: 'Luisito (tu bb)',
+    }
+  ],
+  '23': [
+    {
+      question: '¿Qué te regalé en tu cumpleaños 2023?',
+      options: ['Un peluche', 'Un cuadro', 'Un collar', 'Un libro'],
+      correctAnswer: 'Un collar',
+      askedBy: 'Luisito (tu bb)',
+    }
+  ],
 };
