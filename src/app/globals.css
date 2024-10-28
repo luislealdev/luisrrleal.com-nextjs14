@@ -101,8 +101,8 @@ img {
   justify-content: center;
   min-height: 70vh;
   text-align: center;
-  /* background-color: #f0f0f0; */
-  background-image: url('/img/bg/love.webp');
+  background-color: #f0f0f0;
+  background-image: url('/img/bg/love.JPG');
 }
 
 .container h1 {

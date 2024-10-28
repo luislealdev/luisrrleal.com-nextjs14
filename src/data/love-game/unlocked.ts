@@ -44,7 +44,7 @@ export const unlockedContent: Record<string, { images: string[], videos: string[
         videos: ['/videos/love-game/recuerdo-11.mp4'],
     },
     '12':{
-        images: ['/img/love-game/recuerdo-12.jpeg', '/img/love-game/recuerdo-12-1.jpeg', '/img/love-game/recuerdo-12-2.jpeg'],
+        images: ['/img/love-game/recuerdo-12.jpeg'],
         videos: ['/videos/love-game/recuerdo-12.mp4'],
     },
     '13': {

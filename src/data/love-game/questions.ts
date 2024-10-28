@@ -89,7 +89,7 @@ export const questionSets: Record<string, Question[]> = {
   '11': [
     {
       question: '¿Qué color fue mi equipo en el curso de verano?',
-      options: ['Rojo', 'Naranja', 'Azul', 'Amarrillo'],
+      options: ['Rojo', 'Naranja', 'Azul', 'Amarillo'],
       correctAnswer: 'Amarillo',
       askedBy: 'Yuri',
     }
