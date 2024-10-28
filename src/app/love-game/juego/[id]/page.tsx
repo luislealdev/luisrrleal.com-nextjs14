@@ -24,7 +24,7 @@ export default function Game({ params }: { params: { id: string } }) {
         <div className='container'>
             <h2>Pregunta de {questions[currentQuestion].askedBy}</h2> {/* Nombre del amigo */}
             <h1>{questions[currentQuestion].question}</h1>
-            <div className='flex gap-15'>
+            <div className='grid-c-2 gap-15'>
             {questions[currentQuestion].options.map((option, index) => (
                 <button key={index} onClick={() => handleAnswer(option)}>
                     {option}
