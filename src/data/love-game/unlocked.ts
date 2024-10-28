@@ -39,4 +39,20 @@ export const unlockedContent: Record<string, { images: string[], videos: string[
         images: ['/img/love-game/recuerdo-10.jpeg', '/img/love-game/recuerdo-10-1.jpeg', '/img/love-game/recuerdo-10-2.jpeg', '/img/love-game/recuerdo-10-3.jpeg'],
         videos: ['/videos/love-game/recuerdo-10.mp4'],
     },
+    '11': {
+        images: ['/img/love-game/recuerdo-11.jpeg', '/img/love-game/recuerdo-11-1.jpeg', '/img/love-game/recuerdo-11-2.jpeg'],
+        videos: ['/videos/love-game/recuerdo-11.mp4'],
+    },
+    '12':{
+        images: ['/img/love-game/recuerdo-12.jpeg', '/img/love-game/recuerdo-12-1.jpeg', '/img/love-game/recuerdo-12-2.jpeg'],
+        videos: ['/videos/love-game/recuerdo-12.mp4'],
+    },
+    '13': {
+        images: [],
+        videos: ['/videos/love-game/recuerdo-13.mp4', '/videos/love-game/recuerdo-13-1.mp4', '/videos/love-game/recuerdo-13-2.mp4', '/videos/love-game/recuerdo-13-3.mp4'],
+    },
+    '14':{
+        images: ['/img/love-game/recuerdo-14.jpeg', '/img/love-game/recuerdo-14-1.jpeg', '/img/love-game/recuerdo-14-2.jpeg', '/img/love-game/recuerdo-14-3.jpeg'],
+        videos: ['/videos/love-game/recuerdo-14.mp4', '/videos/love-game/recuerdo-14-1.mp4'],
+    }
 };

@@ -85,6 +85,38 @@ export const questionSets: Record<string, Question[]> = {
       correctAnswer: 'Jaguares',
       askedBy: 'Nao',
     }
+  ],
+  '11': [
+    {
+      question: '¿Qué color fue mi equipo en el curso de verano?',
+      options: ['Rojo', 'Naranja', 'Azul', 'Amarrillo'],
+      correctAnswer: 'Amarillo',
+      askedBy: 'Yuri',
+    }
+  ],
+  '12': [
+    {
+      question: '¿A dónde fuimos a comer el día de mi cumpleaños?',
+      options: ['A mi casa', 'A comer', 'A Querétaro', 'No nos pudimos ver'],
+      correctAnswer: 'A Querétaro',
+      askedBy: 'Yuri',
+    }
+  ],
+  '13': [
+    {
+      question: '¿Qué hicimos la primera vez que vinimos a mi casa?',
+      options: ['Nos quedamos en jugar a mi casa', 'Comimos y luego nos subimos a los juegos', 'Ensayamos una coreografía', 'Comimos churros en mi casa'],
+      correctAnswer: 'Comimos y luego nos subimos a los juegos',
+      askedBy: 'Ricardo',
+    }
+  ],
+  '14': [
+    {
+      question: '¿Dónde empezó nuestra amistad?',
+      options: ['Lindance','Veracruz','Nacional','Pre-nacional'],
+      correctAnswer: 'Veracruz',
+      askedBy: 'Ricardo y Yuri',
+    }
   ]
 
 };
