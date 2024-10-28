@@ -728,6 +728,11 @@ button {
 }
 
 @media (max-width: 770px) {
+
+  .column-in-mobile{
+    flex-direction: column;
+  }
+
   .grid-c-2 {
     grid-template-columns: repeat(1, 1fr);
   }

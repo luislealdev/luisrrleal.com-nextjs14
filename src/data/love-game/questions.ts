@@ -2,44 +2,35 @@ type Question = {
   question: string;
   options: string[];
   correctAnswer: string;
+  askedBy: string; // Amigo que hace la pregunta
 };
 
 export const questionSets: Record<string, Question[]> = {
   '1': [
     {
-      question: '¿Dónde fue nuestra primera cita?',
-      options: ['Parque', 'Cine', 'Cafetería'],
-      correctAnswer: 'Cine',
-    },
-    {
-      question: '¿Qué color de camisa usaba ese día?',
-      options: ['Roja', 'Azul', 'Blanca'],
-      correctAnswer: 'Azul',
+      question: '¿Cuál fue nuestra primer presentación juntos?',
+      options: ['Xochi', 'Tec', 'Presidencia', 'Auditorio'],
+      correctAnswer: 'Presidencia',
+      askedBy: 'Pab',
     },
   ],
   '2': [
     {
-      question: '¿Cuál es su película favorita?',
-      options: ['Inception', 'Titanic', 'Avatar'],
-      correctAnswer: 'Inception',
-    },
-    {
-      question: '¿Qué país quiere visitar?',
-      options: ['Japón', 'Francia', 'Brasil'],
-      correctAnswer: 'Japón',
+      question: '¿Donde tenemos una de nuestras fotos favoritas?',
+      options: ['Apizaco', 'Veracruz', 'Morelia', 'Celaya'],
+      correctAnswer: 'Apizaco',
+      askedBy: 'Pab',
     },
   ],
   '3': [
     {
-      question: '¿Qué sabor de helado le gusta más?',
-      options: ['Vainilla', 'Chocolate', 'Fresa'],
-      correctAnswer: 'Chocolate',
-    },
-    {
-      question: '¿Cuál es su canción favorita?',
-      options: ['Shape of You', 'Blinding Lights', 'Imagine'],
-      correctAnswer: 'Imagine',
+      question: 'A donde ibamos cuando tomamos una foto muy astetikkk? ',
+      options: ['Veracruz', 'Morelia', 'Apizaco', 'Acámbaro'],
+      correctAnswer: 'Acámbaro',
+      askedBy: 'Pab',
     },
   ],
-  // Add more sets as needed
+
+
+
 };

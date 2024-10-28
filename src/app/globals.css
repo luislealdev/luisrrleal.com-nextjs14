@@ -60,6 +60,10 @@ img {
 }
 
 @media (max-width: 770px) {
+  .column-in-mobile{
+    flex-direction: column;
+  }
+
   .p-40 {
     padding: 20px !important;
   }
@@ -90,14 +94,42 @@ img {
 /* LOVE GAME */
 /* app/globals.css */
 .container {
+  padding: 5%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
   justify-content: center;
-  min-height: 100vh;
+  min-height: 70vh;
   text-align: center;
-  background-color: #f0f0f0;
+  /* background-color: #f0f0f0; */
+  background-image: url('/img/bg/love.webp');
 }
+
+.container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #FE7578;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.container button:hover {
+  background-color: #FE4C4F;
+}
+
+.container img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+
 
 h1 {
   font-size: 2.5rem;
