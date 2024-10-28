@@ -113,10 +113,51 @@ export const questionSets: Record<string, Question[]> = {
   '14': [
     {
       question: '¿Dónde empezó nuestra amistad?',
-      options: ['Lindance','Veracruz','Nacional','Pre-nacional'],
+      options: ['Lindance', 'Veracruz', 'Nacional', 'Pre-nacional'],
       correctAnswer: 'Veracruz',
       askedBy: 'Ricardo y Yuri',
     }
+  ],
+  '15': [
+    {
+      question: '¿Siempre juntas, siempre...?',
+      options: ['Tlacuaches', 'Linces', 'Delfines', 'Amigas'],
+      correctAnswer: 'Linces',
+      askedBy: 'Sandy',
+    }
+  ],
+  '16': [
+    {
+      question: '¿De qué nos disfrazamos juntas en Halloween de 2022?',
+      options: ['Piratas sexy', 'Princesas', 'Max Goof', 'Policía y ladrona'],
+      correctAnswer: 'Max Goof',
+      askedBy: 'Sandy',
+    }
+  ],
+  '17': [
+    {
+      question: '¿Que hacemos cuando decimos pose tierna?',
+      options: ['Cara de bebé', 'Ojos de gatito', 'Sonrisa con ojos cerrados', 'Dedo en el cachete'],
+      correctAnswer: 'Dedo en el cachete',
+      askedBy: 'Sandy',
+    }
+  ],
+  '18':[
+    {
+      question: '¿Que nos hizo daño en el viaje a gto del 2022?',
+      options: ['La torta de carnitas', 'La pizza', 'El agua con lechuga', 'Los helados'],
+      correctAnswer: 'La pizza',
+      askedBy: 'Sandy',
+    }
+  ],
+  '19': [
+    {
+      question: '¿Que intentamos hacer múltiples veces para una foto y no nos salió? (Cumpleaños 21)',
+      options: ['Una pirámide', 'Hacer caballito', 'Cargarte de lado', 'Pose sexy'],
+      correctAnswer: 'Cargarte de lado',
+      askedBy: 'Sandy',
+    }
   ]
+
 
 };
