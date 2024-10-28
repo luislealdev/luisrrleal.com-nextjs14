@@ -12,17 +12,17 @@ export default function Unlocked({ params }: { params: { id: string } }) {
         <div className='container'>
             <h1>¡Felicidades!</h1>
             <p className='mb-50'>Has desbloqueado un recuerdo especial.</p>
-            <div className='flex gap-30 column-in-mobile'>
+            <div className='grid-c-4 gap-30 column-in-mobile'>
                 {/* Mostrar imágenes dinámicamente */}
                 {content.images.map((image, index) => (
-                    <Image className='auto-height' width={400} height={1000} key={index} src={image} alt={`Recuerdo ${index + 1}`} />
+                    <Image className='max-width' width={400} height={1000} key={index} src={image} alt={`Recuerdo ${index + 1}`} />
                 ))}
 
                 {/* Mostrar videos dinámicamente */}
                 {content.videos.map((video, index) => (
                     <video key={index} controls>
                         <source src={video} type="video/mp4" />
-                    </video>
+                    </video>    
                 ))}
             </div>
 
