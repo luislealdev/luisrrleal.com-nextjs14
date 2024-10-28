@@ -190,4 +190,12 @@ export const questionSets: Record<string, Question[]> = {
       askedBy: 'Luisito (tu bb)',
     }
   ],
+  '24': [
+    {
+      question: '¿Cómo nos hacemos llamar?',
+      options: ['La family', 'Sanguinarios del M1', 'Los genocidas', 'Club mañoso'],
+      correctAnswer: 'La family',
+      askedBy: 'Todos',
+    }
+  ]
 };
