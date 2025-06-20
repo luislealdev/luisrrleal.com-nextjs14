@@ -154,3 +154,20 @@ button {
 button:hover {
   background-color: #005bb5;
 }
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(60, 60, 60, 0.10);
+  padding: 24px;
+  /* max-width: 340px; */
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.card-img {
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
