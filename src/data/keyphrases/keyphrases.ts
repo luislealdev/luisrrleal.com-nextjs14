@@ -40,4 +40,5 @@ export const keyphrases = [
     "Desarrolladores Web en Celaya",
     "Desarrolladores de Software en Celaya",
     "Diseño de Páginas Web en Celaya",
+    "Agencia de Marketing en Celaya",
 ]
