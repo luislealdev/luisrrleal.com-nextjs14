@@ -19,6 +19,7 @@ export const keyphrases = [
     "Desarrollador de Aplicaciones para Android",
     "Desarrollador de Aplicaciones para iOS",
     "Página Web",
+    "Aplicaciones móviles en Celaya",
     "Página Web Profesional",
     "Página Web para Empresas",
     "Página Web para Negocios",
