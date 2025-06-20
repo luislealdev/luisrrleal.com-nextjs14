@@ -1,6 +1,7 @@
 export const keyphrases = [
     "Desarrollador FullStack",
     "Desarrollador Web",
+    "Diseñador Web",
     "Desarrollador Web Celaya",
     "Landing Page Celaya",
     "Landing Page",
