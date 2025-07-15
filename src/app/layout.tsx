@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Luis Leal',
   description: 'FullStack Developer | Consejos para llegar a ser el desarrollador que siempre quisiste.',
   authors: [{ name: "@luisrrleal" }],
-  keywords: ["luis leal", "leal", "programador", "paginas web", "consejos"],
+  keywords: ["luis leal", "leal", "programador", "paginas web", "consejos", "web", "diseño", "genicrea", "nuve", "software", "celaya"],
   openGraph: {
     type: "website",
     siteName: "Luis Leal",
