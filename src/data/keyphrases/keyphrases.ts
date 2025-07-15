@@ -1,4 +1,5 @@
 export const keyphrases = [
+    "Programador en Celaya",
     "Desarrollador Web Celaya Guanajuato",
     "Desarrollo de Software Celaya",
     "Programador en la zona",
